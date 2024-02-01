@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="cct">
+    <file>logo3.png</file>
+    <file>logo1-removebg-preview.png</file>
+  </qresource>
+  <qresource prefix="lofo2">
+    <file>logo2-removebg-preview.png</file>
+  </qresource>
+</RCC>
