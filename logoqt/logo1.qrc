@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="cct">
+  <qresource prefix="logo1">
     <file>logo3.png</file>
   </qresource>
 </RCC>

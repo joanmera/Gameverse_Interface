@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>524</width>
-    <height>472</height>
+    <width>548</width>
+    <height>471</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,7 +29,7 @@ border: 4px solid #00aaff; /* Contorno neon azul */
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/cct/logo3.png);
+     <string notr="true">border-image: url(:/logo1/logo3.png);
 text-align: center;\n           
  vertical-align: middle;</string>
     </property>
@@ -37,7 +37,7 @@ text-align: center;\n
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="clientButton">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -67,7 +67,7 @@ QPushButton:hover {
      <string>Clientes</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="productsButton">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -93,7 +93,7 @@ QPushButton:hover {
      <string>Productos</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="Button_3">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -119,7 +119,7 @@ QPushButton:hover {
      <string>Compras</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="shoppingButton">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -148,8 +148,8 @@ QPushButton:hover {
   </widget>
  </widget>
  <resources>
-  <include location="../../Downloads/logoqt/logo2.qrc"/>
   <include location="logoqt/logo2.qrc"/>
+  <include location="../logoqt/logo1.qrc"/>
  </resources>
  <connections/>
 </ui>
