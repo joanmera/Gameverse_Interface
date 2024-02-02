@@ -15,6 +15,7 @@ class MainWindow(QMainWindow):
 
     def abrir_ventana_clientes(self):
         # Muestra la ventana de clientes usando la instancia existente
+        self.clientes_window.load_client()  # Asegúrate de llamar a load_client o al método adecuado
         self.clientes_window.show()
 
 
