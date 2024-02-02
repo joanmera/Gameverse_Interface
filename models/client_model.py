@@ -11,6 +11,4 @@ class ClientModel:
         return self._cur.fetchall()
     
 
-    def close(self):
-        self._cur.close()
-        self._conn.close()
+   
