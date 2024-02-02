@@ -9,12 +9,12 @@ class MainWindow(QMainWindow):
         super().__init__()
         root_path = pathlib.Path(__file__).parent.parent
         uic.loadUi(root_path / "views/MainWindow.ui", self)
-        self.clientButton.clicked.connect(lambda: self.abrir_ventana_clientes())
+        self.clientes_window = ClientForm()
+        self.clientButton.clicked.connect(self.abrir_ventana_clientes)
         self.setGeometry(0, 0, 600, 600)
-        # self.setFixedSize(600, 600)
 
     def abrir_ventana_clientes(self):
-        # Crea e muestra la ventana de clientes
-        clientes_window = ClientForm()
-        clientes_window.show()
+        # Muestra la ventana de clientes usando la instancia existente
+        self.clientes_window.show()
+
 
