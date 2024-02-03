@@ -10,5 +10,6 @@ class ClientModel:
         self._cur.execute(query)
         return self._cur.fetchall()
     
+    
 
    
