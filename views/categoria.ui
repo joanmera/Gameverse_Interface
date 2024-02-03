@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>504</width>
-    <height>408</height>
+    <width>557</width>
+    <height>404</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,10 +21,10 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>60</y>
-      <width>251</width>
-      <height>251</height>
+      <x>10</x>
+      <y>30</y>
+      <width>531</width>
+      <height>161</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -40,6 +40,16 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
       <string>Nombre</string>
      </property>
     </column>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -47,11 +57,23 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>504</width>
+     <width>557</width>
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="newCategoryAction"/>
+   </widget>
+   <addaction name="menuArchivo"/>
   </widget>
+  <action name="newCategoryAction">
+   <property name="text">
+    <string>Nueva Categoria</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
