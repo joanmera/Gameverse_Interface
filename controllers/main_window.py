@@ -26,8 +26,6 @@ class MainWindow(QMainWindow):
         self.categorias_window.load_categories()
         self.categorias_window.show()
 
-    def abrir_ventana_categorias(self):
-        self.categorias_window.load_categories()
-        self.categorias_window.show()
+   
 
 
