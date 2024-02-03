@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>551</width>
-    <height>461</height>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,17 +15,22 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(53, 53, 79);
-border: 2px solid #00aaff; /* Contorno neon azul */</string>
+border: 2px solid #00aaff; /* Contorno neon azul */
+color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="clientTable">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>80</y>
+      <y>90</y>
       <width>461</width>
       <height>251</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(7, 7, 7);
+background-color: rgb(255, 255, 255);</string>
     </property>
     <column>
      <property name="text">
@@ -34,12 +39,12 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
     </column>
     <column>
      <property name="text">
-      <string>Cedula</string>
+      <string>Nombre</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Nombre</string>
+      <string>Cedula</string>
      </property>
     </column>
     <column>
@@ -57,6 +62,16 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
       <string>Telefono</string>
      </property>
     </column>
+    <column>
+     <property name="text">
+      <string>New Column</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>New Column</string>
+     </property>
+    </column>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -68,7 +83,19 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuCliente">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="newClientAction"/>
+   </widget>
+   <addaction name="menuCliente"/>
   </widget>
+  <action name="newClientAction">
+   <property name="text">
+    <string>Nuevo Cliente</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

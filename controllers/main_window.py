@@ -2,14 +2,14 @@ from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox, QPushBut
 from PyQt5 import uic
 import pathlib
 from PyQt5 import QtCore
-from controllers.client_form import ClientForm
+from controllers.client_window import ClientWindow
 
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
         root_path = pathlib.Path(__file__).parent.parent
         uic.loadUi(root_path / "views/MainWindow.ui", self)
-        self.clientes_window = ClientForm()
+        self.clientes_window = ClientWindow()
         self.clientButton.clicked.connect(self.abrir_ventana_clientes)
         self.setGeometry(0, 0, 600, 600)
 

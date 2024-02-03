@@ -7,23 +7,29 @@ from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox, QPushBut
 
 from models.client_model import ClientModel
 
-class ClientForm(QMainWindow):
+class ClientForm(QWidget):
+    client_saved= pyqtSignal()
     def __init__(self) -> None:
         super().__init__()
-        self._client_model = ClientModel()
-        mod_path = pathlib.Path(__file__).parent.parent
-        uic.loadUi(mod_path / "views/clientes.ui", self)
+        self._clientHandler = ClientModel()
+        mod_path= pathlib.Path(__file__).parent.parent
+        uic.loadUi(mod_path / "views/clientes_form.ui",self)
+        self.saveButton.clicked.connect(lambda: self.save_client())
+        self.cancelButton.clicked.connect(lambda: self.close())
+        self.client_id = None
+
+    def save_client(self):
         
-    def load_client(self):
-        client_list = self._client_model.get_clients()
-        self.clientTable.setRowCount(len(client_list))
-        for i, cliente in enumerate(client_list):
-            id_cliente, nombre_cliente, cedula, edad, genero, telefono = cliente
-            self.clientTable.setItem(i, 0, QTableWidgetItem(str(id_cliente)))
-            self.clientTable.setItem(i, 1, QTableWidgetItem(str(cedula)))
-            self.clientTable.setItem(i, 2, QTableWidgetItem(str(nombre_cliente)))
-            self.clientTable.setItem(i, 3, QTableWidgetItem(str(edad)))
-            self.clientTable.setItem(i, 4, QTableWidgetItem(str(genero)))
-            self.clientTable.setItem(i, 5, QTableWidgetItem(str(telefono)))
-        
+            self._clientHandler.create_client(
+                
+                
+                self.id_lineEdit.text(),
+                self.name_lineEdit.text(),
+                self.age_lineEdit.text(),
+                self.gender_lineEdit.text(),
+                self.number_lineEdit.text()
+            )
+            self.client_saved.emit()
+            self.close()
+         
         
