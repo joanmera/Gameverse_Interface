@@ -22,8 +22,8 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>60</y>
-      <width>451</width>
+      <y>80</y>
+      <width>461</width>
       <height>251</height>
      </rect>
     </property>
