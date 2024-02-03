@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>548</width>
-    <height>471</height>
+    <width>527</width>
+    <height>465</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@ border: 4px solid #00aaff; /* Contorno neon azul */
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>130</x>
       <y>30</y>
       <width>271</width>
       <height>151</height>
@@ -119,7 +119,7 @@ QPushButton:hover {
      <string>Compras</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="shoppingButton">
+   <widget class="QPushButton" name="categoryButton">
     <property name="geometry">
      <rect>
       <x>80</x>
