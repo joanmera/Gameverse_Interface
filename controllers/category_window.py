@@ -16,7 +16,6 @@ class CategoryWindow(QMainWindow):
         categories=self._category.get_category()
         self.tableWidget.setRowCount(len(categories))
         for i, categories in enumerate(categories):
-            id_categoria,nombre_categoria,nombre_juego= categories
+            id_categoria,nombre_categoria= categories
             self.tableWidget.setItem(i, 0, QTableWidgetItem(str(id_categoria)))
             self.tableWidget.setItem(i, 1, QTableWidgetItem(str(nombre_categoria)))
-            self.tableWidget.setItem(i, 2, QTableWidgetItem(str(nombre_juego)))

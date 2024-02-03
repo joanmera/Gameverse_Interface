@@ -6,8 +6,6 @@ class CategoryModel:
         self._cur = self._conn.cursor()
     
     def get_category(self):
-        query = "SELECT id_categoria,nombre_categoria,nombre_juego \
-            FROM categoria c, videojuego v, juego_categoria jc \
-            WHERE v.id_juego = jc.id_juego1 AND jc.id_categoria1 = c.id_categoria"
+        query = "SELECT id_categoria,nombre_categoria FROM categoria"
         self._cur.execute(query)
         return self._cur.fetchall()
