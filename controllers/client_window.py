@@ -32,6 +32,44 @@ class ClientWindow(QMainWindow):
             self.clientTable.setItem(i, 4, QTableWidgetItem(str(genero)))
             self.clientTable.setItem(i, 5, QTableWidgetItem(str(telefono)))
 
+
+            edit_button = QPushButton ("Editar")
+            edit_button.clicked.connect(self.edit_client)
+            edit_button.setProperty("row", i)
+            self.clientTable.setCellWidget(i, 6, edit_button)
+
+            delete_button = QPushButton("Eliminar")
+            delete_button.clicked.connect(self.delete_client)
+            delete_button.setProperty("row", i)
+            self.clientTable.setCellWidget(i, 7, delete_button)
+
+
+    def edit_client(self):
+        sender = self.sender()
+        row = sender.property("row")
+        student_id = self.clientTable.item(row, 0).text()
+        self._new_client.load_client_data(student_id)
+        self._new_client.show()
+    
+    def delete_client(self):
+        sender = self.sender()
+        row = sender.property("row")
+        client_id = self.clientTable.item(row, 0).text()
+
+        reply = QMessageBox.question(self, 'Eliminar Cliente', '¿Estás seguro de que deseas eliminar este cliente?',
+                                    QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            
+            success = self._client_model.delete_client(client_id)
+            if success:
+                QMessageBox.information(self, 'Éxito', 'Cliente eliminado correctamente.')
+                self.load_client()
+            else:
+                QMessageBox.warning(self, 'Error', 'Error al eliminar el cliente.')
+
+
+
     
     
 
