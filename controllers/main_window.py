@@ -1,6 +1,9 @@
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox, QPushButton
 from PyQt5 import uic
-import pathlib
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtGui import QIcon
+import pathlib  
 from PyQt5 import QtCore
 from controllers.client_window import ClientWindow
 from controllers.category_window import CategoryWindow
@@ -10,6 +13,17 @@ class MainWindow(QMainWindow):
         super().__init__()
         root_path = pathlib.Path(__file__).parent.parent
         uic.loadUi(root_path / "views/MainWindow.ui", self)
+        pixmap = QPixmap('logo3.png')
+        pixmap = pixmap.scaledToWidth(231)
+        pixmap = pixmap.scaledToHeight(141)
+
+        label = QLabel(self)
+        label.setPixmap(pixmap)
+        label.setGeometry(333, 70, 231, 141)
+
+        
+
+
         self.clientes_window = ClientWindow()
         self.categorias_window = CategoryWindow()
         self.clientButton.clicked.connect(self.abrir_ventana_clientes)

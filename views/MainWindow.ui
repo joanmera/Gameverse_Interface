@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>527</width>
-    <height>465</height>
+    <width>531</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,28 +15,10 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(53, 53, 79);
-border: 4px solid #00aaff; /* Contorno neon azul */
+border: 4px  #00aaff; 
  </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>30</y>
-      <width>271</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/logo1/logo3.png);
-text-align: center;\n           
- vertical-align: middle;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="clientButton">
     <property name="geometry">
      <rect>
@@ -145,11 +127,36 @@ QPushButton:hover {
      <string>Categorias</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>30</y>
+      <width>291</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 0px
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="logo1.qrc">:/logo1/logo3.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources>
   <include location="logoqt/logo2.qrc"/>
+  <include location="logo1.qrc"/>
   <include location="../logoqt/logo1.qrc"/>
+  <include location="logoqt/logo1.qrc"/>
  </resources>
  <connections/>
 </ui>
