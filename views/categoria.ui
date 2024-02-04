@@ -18,13 +18,13 @@
 border: 2px solid #00aaff; /* Contorno neon azul */</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="QTableWidget" name="categoryTable">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>80</x>
       <y>30</y>
-      <width>531</width>
-      <height>161</height>
+      <width>431</width>
+      <height>221</height>
      </rect>
     </property>
     <property name="styleSheet">

@@ -2,7 +2,7 @@ import psycopg2
 
 class CategoryModel:
     def __init__(self) -> None:
-        self._conn = psycopg2.connect("dbname=TrabajoFinal_grupo7 user=postgres password=1234 host=localhost")
+        self._conn = psycopg2.connect("dbname=trabajoFinal_grupo7 user=postgres password=1234 host=localhost")
         self._cur = self._conn.cursor()
     
     def get_category(self):
@@ -15,4 +15,36 @@ class CategoryModel:
             VALUES (%s)"
         self._cur.execute(query, (nombre_categoria,))
         self._conn.commit()
+
+    def update_category(self,id_categoria,nombre_categoria):
+        try:
+                query = "UPDATE categoria SET nombre_categoria = %s WHERE id_categoria=%s"
+                self._cur.execute(query, (nombre_categoria,id_categoria))
+                self._conn.commit()
+                return True
+        except Exception as e:
+            print("Ocurrió un error: ", e)
+            return False
+
+    def get_category_by_id(self,id_categoria):
+        try:
+            query="SELECT * FROM categoria WHERE id_categoria = %s"
+            self._cur.execute(query,(id_categoria,))
+            return self._cur.fetchone()
+        except Exception as e:
+            print("Ocurrió un error: ", e)
+            return None
     
+    def delete_category(self, id_categoria):
+        try:
+            query = "DELETE FROM categoria WHERE id_categoria = %s"
+            self._cur.execute(query, (id_categoria,))
+            self._conn.commit()
+            return True
+        except Exception as e:
+            print("Ocurrió un error al eliminar categoria: ", e)
+            return False
+        
+    def close(self):
+        self._cur.close()
+        self._conn.close()
