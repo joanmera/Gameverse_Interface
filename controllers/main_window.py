@@ -19,7 +19,7 @@ class MainWindow(QMainWindow):
 
         label = QLabel(self)
         label.setPixmap(pixmap)
-        label.setGeometry(333, 70, 231, 141)
+        label.setGeometry(148, 70, 231, 141)
 
         
 
@@ -28,7 +28,7 @@ class MainWindow(QMainWindow):
         self.categorias_window = CategoryWindow()
         self.clientButton.clicked.connect(self.abrir_ventana_clientes)
         self.categoryButton.clicked.connect(self.abrir_ventana_categorias)
-        self.setGeometry(0, 0, 600, 600)
+        self.setGeometry(0, 0, 548, 500)
 
     def abrir_ventana_clientes(self):
         # Muestra la ventana de clientes usando la instancia existente
