@@ -15,7 +15,9 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(53, 53, 79);
-border: 2px solid #00aaff; /* Contorno neon azul */</string>
+border: 2px solid #00aaff; /* Contorno neon azul */
+color: rgb(255, 255, 255);
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="categoryTable">
@@ -28,7 +30,8 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(7, 7, 7);</string>
     </property>
     <column>
      <property name="text">
