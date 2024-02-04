@@ -4,6 +4,7 @@ import pathlib
 from PyQt5 import QtCore
 
 from models.category_model import CategoryModel
+from controllers.category_form import CategoryForm
 
 class CategoryWindow(QMainWindow):
     def __init__(self) -> None:
@@ -11,6 +12,10 @@ class CategoryWindow(QMainWindow):
         self._category = CategoryModel()
         mod_path = pathlib.Path(__file__).parent.parent
         uic.loadUi(mod_path / "views/categoria.ui", self)
+        self._new_category = CategoryForm()
+        self.load_categories()
+        self.newCategoryAction.triggered.connect(lambda: self._new_category.show())
+        self._new_category.category_saved.connect(self.load_categories)
 
     def load_categories(self):
         categories=self._category.get_category()
