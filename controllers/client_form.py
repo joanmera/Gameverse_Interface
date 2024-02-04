@@ -22,16 +22,16 @@ class ClientForm(QWidget):
         if self.client_id:
             self._clientHandler.update_client(
                 self.client_id,
-                self.id_lineEdit.text(),
                 self.name_lineEdit.text(),
+                self.id_lineEdit.text(),
                 self.age_lineEdit.text(),
                 self.gender_lineEdit.text(),
                 self.number_lineEdit.text()
             )
         else:
             self._clientHandler.create_client(
-                self.id_lineEdit.text(),
                 self.name_lineEdit.text(),
+                self.id_lineEdit.text(),
                 self.age_lineEdit.text(),
                 self.gender_lineEdit.text(),
                 self.number_lineEdit.text()
@@ -45,9 +45,16 @@ class ClientForm(QWidget):
         self.client_id = client_id
         client_data = self._clientHandler.get_client_by_id(client_id)
         if client_data:
-            self.name_lineEdit.setText(str(client_data[1]))
+            self.name_lineEdit.setText(client_data[1])
             self.id_lineEdit.setText(str(client_data[2]))
             self.age_lineEdit.setText(str(client_data[3]))
-            self.gender_lineEdit.setText(str(client_data[4]))
-            self.number_lineEdit.setText(str(client_data[5]))
+            self.gender_lineEdit.setText(client_data[4])
+            self.number_lineEdit.setText(client_data[5])
 
+    def reset_form(self):
+            self.name_lineEdit.setText("")
+            self.id_lineEdit.setText("")
+            self.age_lineEdit.setText("")
+            self.gender_lineEdit.setText("")
+            self.number_lineEdit.setText("")
+            self.client_id = None

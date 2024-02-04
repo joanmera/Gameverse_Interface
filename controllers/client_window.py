@@ -16,7 +16,7 @@ class ClientWindow(QMainWindow):
         uic.loadUi(mod_path / "views/clientes.ui", self)
         self._new_client = ClientForm()
         self.load_client()
-        self.newClientAction.triggered.connect(lambda: self._new_client.show())
+        self.newClientAction.triggered.connect(lambda: self.create_client())
         self._new_client.client_saved.connect(self.load_client)
     
         
@@ -26,8 +26,8 @@ class ClientWindow(QMainWindow):
         for i, cliente in enumerate(client_list):
             id_cliente, nombre_cliente, cedula, edad, genero, telefono = cliente
             self.clientTable.setItem(i, 0, QTableWidgetItem(str(id_cliente)))
-            self.clientTable.setItem(i, 1, QTableWidgetItem(str(cedula)))
-            self.clientTable.setItem(i, 2, QTableWidgetItem(str(nombre_cliente)))
+            self.clientTable.setItem(i, 1, QTableWidgetItem(str(nombre_cliente)))
+            self.clientTable.setItem(i, 2, QTableWidgetItem(str(cedula)))
             self.clientTable.setItem(i, 3, QTableWidgetItem(str(edad)))
             self.clientTable.setItem(i, 4, QTableWidgetItem(str(genero)))
             self.clientTable.setItem(i, 5, QTableWidgetItem(str(telefono)))
@@ -68,7 +68,13 @@ class ClientWindow(QMainWindow):
             else:
                 QMessageBox.warning(self, 'Error', 'Error al eliminar el cliente.')
 
+    def create_client(self):
+        self._new_client.reset_form()
+        self._new_client.show()
 
+    def closeEvent(self, ev) -> None:
+        self._client_model.close()
+        return super().closeEvent(ev)
 
     
     
