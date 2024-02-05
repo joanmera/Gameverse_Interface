@@ -7,6 +7,7 @@ import pathlib
 from PyQt5 import QtCore
 from controllers.client_window import ClientWindow
 from controllers.category_window import CategoryWindow
+from controllers.purchase_window import PurchaseWindow
 
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
@@ -26,8 +27,10 @@ class MainWindow(QMainWindow):
 
         self.clientes_window = ClientWindow()
         self.categorias_window = CategoryWindow()
+        self.compras_window = PurchaseWindow()
         self.clientButton.clicked.connect(self.abrir_ventana_clientes)
         self.categoryButton.clicked.connect(self.abrir_ventana_categorias)
+        self.purchaseButton.clicked.connect(self.abrir_ventana_compras)
         self.setGeometry(0, 0, 548, 500)
 
     def abrir_ventana_clientes(self):
@@ -39,6 +42,10 @@ class MainWindow(QMainWindow):
     def abrir_ventana_categorias(self):
         self.categorias_window.load_categories()
         self.categorias_window.show()
+
+    def abrir_ventana_compras(self):
+        self.compras_window.load_purchases()
+        self.compras_window.show()
 
    
 
