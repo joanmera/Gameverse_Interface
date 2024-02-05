@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>551</width>
-    <height>450</height>
+    <width>929</width>
+    <height>629</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,10 +22,10 @@ color: rgb(255, 255, 255);</string>
    <widget class="QTableWidget" name="clientTable">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>160</x>
       <y>90</y>
-      <width>461</width>
-      <height>251</height>
+      <width>611</width>
+      <height>411</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -79,7 +79,7 @@ background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>551</width>
+     <width>929</width>
      <height>22</height>
     </rect>
    </property>
@@ -97,6 +97,8 @@ background-color: rgb(255, 255, 255);</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="logoqt/logo1.qrc"/>
+ </resources>
  <connections/>
 </ui>

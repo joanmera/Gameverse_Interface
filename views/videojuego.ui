@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>524</width>
-    <height>466</height>
+    <width>927</width>
+    <height>621</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,10 +21,10 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>70</y>
+      <x>220</x>
+      <y>90</y>
       <width>451</width>
-      <height>251</height>
+      <height>411</height>
      </rect>
     </property>
     <column>
@@ -64,7 +64,7 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>524</width>
+     <width>927</width>
      <height>22</height>
     </rect>
    </property>
