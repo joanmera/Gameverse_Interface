@@ -31,7 +31,7 @@ class MainWindow(QMainWindow):
         self.clientButton.clicked.connect(self.abrir_ventana_clientes)
         self.categoryButton.clicked.connect(self.abrir_ventana_categorias)
         self.purchaseButton.clicked.connect(self.abrir_ventana_compras)
-        self.setGeometry(0, 0, 548, 500)
+        
 
     def abrir_ventana_clientes(self):
         # Muestra la ventana de clientes usando la instancia existente
