@@ -22,9 +22,9 @@ color: rgb(255, 255, 255);</string>
    <widget class="QTableWidget" name="purchaseTable">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>40</x>
       <y>100</y>
-      <width>351</width>
+      <width>421</width>
       <height>181</height>
      </rect>
     </property>
@@ -32,6 +32,11 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(7, 7, 7);</string>
     </property>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
     <column>
      <property name="text">
       <string>id</string>
@@ -133,19 +138,6 @@ border: 0px solid #00aaff;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(148, 255, 232);</string>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>100</y>
-      <width>61</width>
-      <height>181</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>GroupBox</string>
     </property>
    </widget>
   </widget>
