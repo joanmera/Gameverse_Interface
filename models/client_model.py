@@ -1,9 +1,10 @@
-import psycopg2
+from models.database_conn import DatabaseConnection
 
 class ClientModel:
     def __init__(self) -> None:
-        self._conn = psycopg2.connect("dbname=trabajoFinal_grupo7 user=postgres password=1234 host=localhost")
-        self._cur = self._conn.cursor()
+        DB= DatabaseConnection()
+        self._conn = DB.connection
+        self._cur = DB.cursor
 
     def get_clients(self):
         query = "SELECT * FROM cliente ORDER BY nombre_cliente"

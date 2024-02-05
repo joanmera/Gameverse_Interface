@@ -1,10 +1,11 @@
-from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox, QPushButton
+from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import uic
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtGui import QIcon
 import pathlib  
 from PyQt5 import QtCore
+
 from controllers.client_window import ClientWindow
 from controllers.category_window import CategoryWindow
 from controllers.purchase_window import PurchaseWindow
