@@ -1,8 +1,10 @@
+from psycopg2 import Error
 import pathlib
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5 import uic   
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox, QPushButton
+from PyQt5 import QtCore
 
 
 from models.client_model import ClientModel
@@ -31,6 +33,7 @@ class ClientWindow(QMainWindow):
             self.clientTable.setItem(i, 3, QTableWidgetItem(str(edad)))
             self.clientTable.setItem(i, 4, QTableWidgetItem(str(genero)))
             self.clientTable.setItem(i, 5, QTableWidgetItem(str(telefono)))
+            self.clientTable.item(i, 0).setFlags(QtCore.Qt.ItemIsEnabled | QtCore.Qt.ItemIsSelectable)
 
 
             edit_button = QPushButton ("Editar")
@@ -45,12 +48,16 @@ class ClientWindow(QMainWindow):
 
 
     def edit_client(self):
-        sender = self.sender()
-        row = sender.property("row")
-        student_id = self.clientTable.item(row, 0).text()
-        self._new_client.load_client_data(student_id)
-        self._new_client.show()
-    
+        try:
+            sender = self.sender()
+            row = sender.property("row")
+            client_id = self.clientTable.item(row, 0).text()
+            
+            self._new_client.load_client_data(client_id)
+            self._new_client.show()
+        except Exception as e:
+            print("Error en la carga de datos del cliente:", e)
+
     def delete_client(self):
         sender = self.sender()
         row = sender.property("row")

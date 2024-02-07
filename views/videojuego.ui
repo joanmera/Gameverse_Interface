@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>927</width>
-    <height>621</height>
+    <width>935</width>
+    <height>644</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,14 +18,18 @@
 border: 2px solid #00aaff; /* Contorno neon azul */</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="QTableWidget" name="gameTable">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>90</y>
-      <width>451</width>
+      <x>60</x>
+      <y>40</y>
+      <width>681</width>
       <height>411</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(7, 7, 7);
+background-color: rgb(255, 255, 255);</string>
     </property>
     <column>
      <property name="text">
@@ -35,6 +39,11 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
     <column>
      <property name="text">
       <string>Nombre</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Categoria</string>
      </property>
     </column>
     <column>
@@ -57,6 +66,16 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
       <string>Puntuación</string>
      </property>
     </column>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -64,11 +83,23 @@ border: 2px solid #00aaff; /* Contorno neon azul */</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>927</width>
+     <width>935</width>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="newGameAction"/>
+   </widget>
+   <addaction name="menuArchivo"/>
   </widget>
+  <action name="newGameAction">
+   <property name="text">
+    <string>Nuevo Juego</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

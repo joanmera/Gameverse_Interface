@@ -49,7 +49,7 @@ QPushButton:hover {
      <string>Clientes</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="productsButton">
+   <widget class="QPushButton" name="gameButton">
     <property name="geometry">
      <rect>
       <x>550</x>

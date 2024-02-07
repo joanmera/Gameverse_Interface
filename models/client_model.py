@@ -44,7 +44,7 @@ class ClientModel:
             self._conn.commit()
             return True
         except Exception as e:
-            print("Ocurrió un error al eliminar al estudiante: ", e)
+            print("Ocurrió un error al eliminar al cliente: ", e)
             return False        
 
     def rollback(self):
@@ -55,23 +55,3 @@ class ClientModel:
     def close(self):
         self._cur.close()
         self._conn.close()
-
-
-
-''''
-    def update_client(self, nombre_cliente,cedula,genero,telefono):
-        try:
-                query = "UPDATE cliente SET nombre_cliente=%s, cedula=%s, genero=%s, telefono=%s WHERE id_cliente=%s"
-                self._cur.execute(query, (nombre_cliente,cedula,genero,telefono))
-                self._conn.commit()
-                return True
-                 
-        except Exception as e:
-            print("Ocurrió un error: ", e)
-            return False
-    
-
-    def close(self):
-            self._cur.close()
-            self._conn.close()
-'''

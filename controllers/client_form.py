@@ -46,10 +46,11 @@ class ClientForm(QWidget):
 
         except Error as e:
             print("Error en la transacción de la base de datos:", e)
-            self.invalid_information.setText("Ingresa una identificacion valida")
-            self.invalid_information_2.setText("Ingresa una edad valida")
-            self._clientHandler.rollback()  # Agrega )un rollback para revertir la transacción fallida
-
+            error_box = QMessageBox()
+            error_box.setStyleSheet("color: white") 
+            QMessageBox.critical(self, "Error", "Ha ocurrido un error en la creación del cliente. "
+                                                "Revisa que los datos sean ingresados correctamente.")
+            self._clientHandler.rollback()
 
 
 
