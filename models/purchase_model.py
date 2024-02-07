@@ -15,6 +15,9 @@ class PurchaseModel:
         self._cur.execute(query)
         return self._cur.fetchall()
     
+    #def select_purchase(self):
+     #   pass    
+
     def close(self):
         self._cur.close()
         self._conn.close()
