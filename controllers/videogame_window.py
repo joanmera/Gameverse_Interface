@@ -5,73 +5,74 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox, QPushButton
 
 
-from models.client_model import ClientModel
-from controllers.client_form import ClientForm
+from models.videogame_model import VideogameModel
+from controllers.videogame_form import VideogameForm
 
-class VideogameWinindow(QMainWindow):
+class VideogameWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
-        self.__model = ClientModel()
+        self._game_model = VideogameModel()
         mod_path = pathlib.Path(__file__).parent.parent
-        uic.loadUi(mod_path / "views/clientes.ui", self)
-        self._new_client = ClientForm()
-        self.load_client()
-        self.newClientAction.triggered.connect(lambda: self.create_client())
-        self._new_client.client_saved.connect(self.load_client)
+        uic.loadUi(mod_path / "views/videojuego.ui", self)
+        self._new_game = VideogameForm()
+        self.load_game()
+        self.newGameAction.triggered.connect(lambda: self.create_game())
+        self._new_game.game_saved.connect(self.load_game)
     
         
-    def load_client(self):
-        client_list = self._client_model.get_clients()
-        self.clientTable.setRowCount(len(client_list))
-        for i, cliente in enumerate(client_list):
-            id_cliente, nombre_cliente, cedula, edad, genero, telefono = cliente
-            self.clientTable.setItem(i, 0, QTableWidgetItem(str(id_cliente)))
-            self.clientTable.setItem(i, 1, QTableWidgetItem(str(nombre_cliente)))
-            self.clientTable.setItem(i, 2, QTableWidgetItem(str(cedula)))
-            self.clientTable.setItem(i, 3, QTableWidgetItem(str(edad)))
-            self.clientTable.setItem(i, 4, QTableWidgetItem(str(genero)))
-            self.clientTable.setItem(i, 5, QTableWidgetItem(str(telefono)))
+    def load_game(self):
+        game_list = self._game_model.get_videogame()
+        self.gameTable.setRowCount(len(game_list))
+        for i, juego in enumerate(game_list):
+            id_juego, nombre_juego,categoria, precio, desarrollador, fecha_lanzamiento, puntuacion_general = juego
+            self.gameTable.setItem(i, 0, QTableWidgetItem(str(id_juego)))
+            self.gameTable.setItem(i, 1, QTableWidgetItem(str(nombre_juego)))
+            self.gameTable.setItem(i, 2, QTableWidgetItem(str(categoria)))
+            self.gameTable.setItem(i, 3, QTableWidgetItem(str(precio)))
+            self.gameTable.setItem(i, 4, QTableWidgetItem(str(desarrollador)))
+            self.gameTable.setItem(i, 5, QTableWidgetItem(str(fecha_lanzamiento)))
+            self.gameTable.setItem(i, 6, QTableWidgetItem(str(puntuacion_general)))
 
 
             edit_button = QPushButton ("Editar")
-            edit_button.clicked.connect(self.edit_client)
+            edit_button.clicked.connect(self.edit_game)
             edit_button.setProperty("row", i)
-            self.clientTable.setCellWidget(i, 6, edit_button)
+            self.gameTable.setCellWidget(i, 7, edit_button)
 
             delete_button = QPushButton("Eliminar")
-            delete_button.clicked.connect(self.delete_client)
+            delete_button.clicked.connect(self.delete_game)
             delete_button.setProperty("row", i)
-            self.clientTable.setCellWidget(i, 7, delete_button)
+            self.gameTable.setCellWidget(i, 8, delete_button)
 
 
-    def edit_client(self):
+    def edit_game(self):
         sender = self.sender()
         row = sender.property("row")
-        student_id = self.clientTable.item(row, 0).text()
-        self._new_client.load_client_data(student_id)
-        self._new_client.show()
+        game_id = self.gameTable.item(row, 0).text()
+        self._new_game.load_game_data(game_id)
+        self._new_game.show()
     
-    def delete_client(self):
+    def delete_game(self):
         sender = self.sender()
         row = sender.property("row")
-        client_id = self.clientTable.item(row, 0).text()
+        game_id = self.gameTable.item(row, 0).text()
 
-        reply = QMessageBox.question(self, 'Eliminar Cliente', '¿Estás seguro de que deseas eliminar este cliente?',
+        reply = QMessageBox.question(self, 'Eliminar Videojuego', '¿Estás seguro de que deseas eliminar este Videojuego?',
                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
 
         if reply == QMessageBox.Yes:
             
-            success = self._client_model.delete_client(client_id)
+            success = self._game_model.delete_game(game_id)
             if success:
-                QMessageBox.information(self, 'Éxito', 'Cliente eliminado correctamente.')
-                self.load_client()
+                QMessageBox.information(self, 'Éxito', 'Videojuego eliminado correctamente.')
+                self.load_game()
             else:
-                QMessageBox.warning(self, 'Error', 'Error al eliminar el cliente.')
+                QMessageBox.warning(self, 'Error', 'Error al eliminar el Videojuego.')
 
-    def create_client(self):
-        self._new_client.reset_form()
-        self._new_client.show()
+    def create_game(self):
+        self._new_game.reset_form()
+        self._new_game.show()
 
     def closeEvent(self, ev) -> None:
-        self._client_model.close()
+        self._game_model.close()
         return super().closeEvent(ev)
