@@ -37,10 +37,24 @@ color: rgb(7, 7, 7);</string>
      <property name="text">
       <string>id</string>
      </property>
+     <property name="background">
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>255</blue>
+      </color>
+     </property>
     </column>
     <column>
      <property name="text">
       <string>Nombre</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>255</blue>
+      </color>
      </property>
     </column>
     <column>

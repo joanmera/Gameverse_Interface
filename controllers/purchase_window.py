@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem,QPushButton,QMessageBox
+from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem,QCheckBox
 from PyQt5 import uic
 import pathlib
 from PyQt5 import QtCore
@@ -21,6 +21,11 @@ class PurchaseWindow(QMainWindow):
             self.purchaseTable.setItem(i, 1, QTableWidgetItem(str(id_orden)))
             self.purchaseTable.setItem(i, 2, QTableWidgetItem(str(nombre_juego)))
             self.purchaseTable.setItem(i, 3, QTableWidgetItem(str(nombre_categoria)))
+
+            check_button= QCheckBox ()
+            #check_button.clicked.connect(self.select_purchase)
+            check_button.setProperty("row",i)
+            self.purchaseTable.setCellWidget(i,0,check_button)
 
     def closeEvent(self, ev) -> None:
         self._purchase_model.close()
