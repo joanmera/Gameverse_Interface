@@ -46,6 +46,11 @@ class ClientModel:
             print("Ocurrió un error al eliminar al estudiante: ", e)
             return False        
 
+    def rollback(self):
+        """Revierte la transacción actual."""
+        if self._conn:
+            self._conn.rollback()
+
     def close(self):
         self._cur.close()
         self._conn.close()
