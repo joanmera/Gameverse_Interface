@@ -15,8 +15,12 @@ class PurchaseModel:
         self._cur.execute(query)
         return self._cur.fetchall()
     
-    #def select_purchase(self):
-     #   pass    
+    def select_purchase(self,id_orden):
+        query = "SELECT precio FROM videojuego v, juego_compra jc, compra c \
+        WHERE v.id_juego = jc.id_juego2 AND jc.id_orden1 = c.id_orden \
+        AND id_orden = %s"
+        self._cur.execute(query,(id_orden,))
+        return self._cur.fetchone()     
 
     def close(self):
         self._cur.close()
