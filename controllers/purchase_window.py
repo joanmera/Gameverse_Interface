@@ -13,6 +13,7 @@ class PurchaseWindow(QMainWindow):
         self._new_purchase = PurchaseForm()
         self.load_purchase()
         self.actionNueva_compra.triggered.connect(lambda: self.load_product())
+        self._new_purchase.purchase_saved.connect(self.load_purchase)
 
     def load_purchase(self):
         purchase_list = self._purchase_model.get_purchase()
@@ -20,11 +21,12 @@ class PurchaseWindow(QMainWindow):
         for i, compra in enumerate(purchase_list):
             id_orden, ciudad, fecha_orden, precio_total, nombre_cliente, nombre_juego, nombre_categoria = compra
             self.purchaseTable.setItem(i, 0, QTableWidgetItem(str(id_orden)))
-            self.purchaseTable.setItem(i, 1, QTableWidgetItem(str(fecha_orden)))
-            self.purchaseTable.setItem(i, 2, QTableWidgetItem(str(precio_total)))
-            self.purchaseTable.setItem(i, 3, QTableWidgetItem(str(nombre_cliente)))
-            self.purchaseTable.setItem(i, 4, QTableWidgetItem(str(nombre_juego)))
-            self.purchaseTable.setItem(i, 5, QTableWidgetItem(str(nombre_categoria)))
+            self.purchaseTable.setItem(i, 1, QTableWidgetItem(str(ciudad)))
+            self.purchaseTable.setItem(i, 2, QTableWidgetItem(str(fecha_orden)))
+            self.purchaseTable.setItem(i, 3, QTableWidgetItem(str(precio_total)))
+            self.purchaseTable.setItem(i, 4, QTableWidgetItem(str(nombre_cliente)))
+            self.purchaseTable.setItem(i, 5, QTableWidgetItem(str(nombre_juego)))
+            self.purchaseTable.setItem(i, 6, QTableWidgetItem(str(nombre_categoria)))
 
     def load_product(self):
         self._new_purchase.show()

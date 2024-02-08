@@ -8,10 +8,9 @@ class PurchaseModel:
 
     def get_products(self):
         query = " SELECT id_juego, nombre_juego,nombre_categoria \
-        FROM compra co, videojuego v, categoria c, juego_categoria jc, juego_compra jco \
-        WHERE co.id_orden = jco.id_orden1 AND jco.id_juego2= v.id_juego  \
-        AND v.id_juego = jc.id_juego1 AND jc.id_categoria1 = c.id_categoria \
-        ORDER BY fecha_orden"
+        FROM videojuego v, categoria c, juego_categoria jc \
+        WHERE v.id_juego = jc.id_juego1 AND jc.id_categoria1 = c.id_categoria \
+        "
         self._cur.execute(query)
         return self._cur.fetchall()
     
@@ -26,20 +25,17 @@ class PurchaseModel:
         self._cur.execute(query)
         return self._cur.fetchall()
     
-    def create_purchase(self, id_cliente, id_juego, id_categoria):
+    def create_purchase(self, id_cliente, fecha_orden, id_juegos,precio_total):
         try:
             # Realiza la inserción en la tabla de compras
-            query_compra = "INSERT INTO compra (id_cliente1) VALUES (%s) RETURNING id_orden"
-            self._cur.execute(query_compra, (int(id_cliente),))
-            id_orden = self._cur.fetchone()[0]
+            query_compra = "INSERT INTO compra (id_cliente1, fecha_orden,precio_total) VALUES (%s, %s,%s) RETURNING id_orden"
+            self._cur.execute(query_compra, (id_cliente, fecha_orden,precio_total),)
+            id_orden = self._cur.fetchone()[0]  # Obtener el ID de la orden recién insertada
 
-            # Inserta en la tabla de juego_compra
-            query_juego_compra = "INSERT INTO juego_compra (id_juego2, id_orden1) VALUES (%s, %s)"
-            self._cur.execute(query_juego_compra, (int(id_juego), id_orden))
-
-            # Inserta en la tabla de juego_categoria
-            query_juego_categoria = "INSERT INTO juego_categoria (id_juego1, id_categoria1) VALUES (%s, %s)"
-            self._cur.execute(query_juego_categoria, (int(id_juego), int(id_categoria)))
+            # Asocia los juegos a la compra en la tabla juego_compra
+            query_juego_compra = "INSERT INTO juego_compra (id_orden1, id_juego2) VALUES (%s, %s)"
+            for id_juego in id_juegos:
+                self._cur.execute(query_juego_compra, (id_orden, id_juego),)
 
             self._conn.commit()
 
@@ -47,6 +43,16 @@ class PurchaseModel:
             print("Ocurrió un error en la creación de la compra:", e)
             self.rollback()
             raise  # Re-levanta la excepción para que pueda ser manejada por el controlador
+
+    def get_total(self, id_juego):
+        query = "SELECT precio FROM videojuego WHERE id_juego = %s"
+        self._cur.execute(query, (id_juego,))
+        result = self._cur.fetchone()
+        if result:
+            return float(result[0])  # Convertir a float antes de devolver
+        else:
+            return 0.0  # O un valor predeterminado si el precio no está disponible
+
 
 
     def get_clients(self):

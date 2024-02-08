@@ -56,6 +56,11 @@ QTableWidget::item:selected {
     </column>
     <column>
      <property name="text">
+      <string>Ciudad</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
       <string>Fecha</string>
      </property>
     </column>
