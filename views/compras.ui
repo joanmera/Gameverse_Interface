@@ -56,11 +56,6 @@ QTableWidget::item:selected {
     </column>
     <column>
      <property name="text">
-      <string>Ciudad</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
       <string>Fecha</string>
      </property>
     </column>
@@ -92,7 +87,7 @@ QTableWidget::item:selected {
      <x>0</x>
      <y>0</y>
      <width>783</width>
-     <height>23</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">

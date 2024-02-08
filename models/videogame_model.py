@@ -19,17 +19,17 @@ class VideogameModel:
 
     def create_game(self, nombre_juego, nombre_categoria, precio, desarrollador, fecha_lanzamiento, puntuacion_general):
         try:
-            # Primero, inserta en videojuego
+            # Primero se inserta en videojuego
             query_videojuego = "INSERT INTO videojuego (nombre_juego, precio, desarrollador, fecha_lanzamiento, puntuacion_general) VALUES (%s, %s, %s, %s, %s) RETURNING id_juego"
             self._cur.execute(query_videojuego, (nombre_juego, precio, desarrollador, fecha_lanzamiento, puntuacion_general))
             id_juego1 = self._cur.fetchone()[0]
 
-            # Luego, obtén el id_categoria1 correspondiente a nombre_categoria
+            # Luego se obtiene el id_categoria1 correspondiente a nombre_categoria
             query_categoria = "SELECT id_categoria FROM categoria WHERE nombre_categoria = %s"
             self._cur.execute(query_categoria, (nombre_categoria,))
             id_categoria1 = self._cur.fetchone()[0]
 
-            # Finalmente, inserta en juego_categoria
+            # Finalmente, se inserta en juego_categoria
             query_juego_categoria = "INSERT INTO juego_categoria (id_juego1, id_categoria1) VALUES (%s, %s)"
             self._cur.execute(query_juego_categoria, (id_juego1, id_categoria1))
             self._conn.commit()
@@ -39,10 +39,6 @@ class VideogameModel:
             return False
 
         return True
-
-
-
-
 
 
     def update_game(self, id_juego, nombre_juego, nombre_categoria, precio, desarrollador, fecha_lanzamiento, puntuacion_general):
@@ -73,10 +69,7 @@ class VideogameModel:
         except Exception as e:
             print("Ocurrió un error: ", e)
             return False
-
-
-
-        
+ 
     def get_game_by_id(self, game_id):
         try:
             query = """
