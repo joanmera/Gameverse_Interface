@@ -7,4 +7,3 @@ psycopg_example = MainWindow()
 psycopg_example.show()
 sys.exit(app.exec())
 
-#papasfritas

@@ -90,8 +90,6 @@ class VideogameModel:
         self._cur.execute(query)
         return [result[0] for result in self._cur.fetchall()]
 
-    
-
     def delete_game(self, game_id):
         try:
             # Elimina las filas en juego_categoria asociadas al id_juego

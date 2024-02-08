@@ -29,12 +29,7 @@ class PurchaseWindow(QMainWindow):
             self.purchaseTable.setItem(i, 4, QTableWidgetItem(str(nombre_juego)))
             self.purchaseTable.setItem(i, 5, QTableWidgetItem(str(nombre_categoria)))
 
-            details_button = QPushButton("Detalles")
-            details_button.setIcon(QIcon("views/details.png"))
-            details_button.setStyleSheet("background-color: transparent; border: none; color: black;")
-            details_button.setIconSize(QSize(25, 25))
-            details_button.setProperty("row", i)
-            self.purchaseTable.setCellWidget(i, 6, details_button)
+      
 
     def load_product(self):
         self._new_purchase.show()

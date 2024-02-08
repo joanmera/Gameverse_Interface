@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>783</width>
+    <width>695</width>
     <height>406</height>
    </rect>
   </property>
@@ -24,7 +24,7 @@ color: rgb(255, 255, 255);</string>
      <rect>
       <x>20</x>
       <y>40</y>
-      <width>751</width>
+      <width>641</width>
       <height>241</height>
      </rect>
     </property>
@@ -79,11 +79,6 @@ QTableWidget::item:selected {
       <string>Categoria</string>
      </property>
     </column>
-    <column>
-     <property name="text">
-      <string/>
-     </property>
-    </column>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -91,7 +86,7 @@ QTableWidget::item:selected {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>783</width>
+     <width>695</width>
      <height>23</height>
     </rect>
    </property>
