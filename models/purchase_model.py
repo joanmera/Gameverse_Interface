@@ -15,13 +15,14 @@ class PurchaseModel:
         return self._cur.fetchall()
     
     def get_purchase(self):
-        query = "SELECT id_orden, ciudad, fecha_orden, precio_total,nombre_cliente,nombre_juego,nombre_categoria \
+        query = "SELECT id_orden, fecha_orden, precio_total,nombre_cliente,nombre_juego,nombre_categoria \
                 FROM cliente cl, compra co, juego_compra jc, videojuego v, juego_categoria jca, categoria c\
                 WHERE c.id_categoria = jca.id_categoria1 \
                 AND jca.id_juego1 = v.id_juego \
                 AND v.id_juego = jc.id_juego2\
                 AND jc.id_orden1 = co.id_orden\
-                AND co.id_cliente1 = cl.id_cliente" 
+                AND co.id_cliente1 = cl.id_cliente\
+                ORDER BY fecha_orden" 
         self._cur.execute(query)
         return self._cur.fetchall()
     

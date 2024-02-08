@@ -64,7 +64,7 @@ class PurchaseForm(QWidget):
     def get_selected_games(self):
         selected_games = []
         total_price = 0.0  # Inicializa el precio total
-
+        
         for row in range(self.purchaseTable.rowCount()):
             checkbox = self.purchaseTable.cellWidget(row, 0)
             if checkbox.isChecked():
@@ -104,7 +104,3 @@ class PurchaseForm(QWidget):
             details_button.setIconSize(QSize(25, 25))
             details_button.setProperty("row", i)
             self.purchaseTable.setCellWidget(i, 5, details_button)
-
-    def closeEvent(self, ev) -> None:
-        self._purchase_model.close()
-        return super().closeEvent(ev)
