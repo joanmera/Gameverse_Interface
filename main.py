@@ -6,3 +6,4 @@ app=QApplication(sys.argv)
 psycopg_example = MainWindow()
 psycopg_example.show()
 sys.exit(app.exec())
+

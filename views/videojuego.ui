@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1001</width>
+    <height>544</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(53, 53, 79);
+border: 1px solid #00aaff; /* Contorno neon azul */
+color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="gameTable">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>921</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTableWidget {
+	color: rgb(201, 255, 252);
+    background-color: #d9fffb;; /* Fondo de la tabla (celeste muy tenue) */
+}
+
+QTableWidget QHeaderView:section {
+    background-color: #a9bdff ; /* Fondo del encabezado de la columna (celeste muy tenue) */
+    color: black; /* Color del texto del encabezado de la columna (negro) */
+}
+
+QTableWidget::item {
+    padding: 5px; /* Espaciado interno de las celdas */ 
+	color: black;
+}
+
+QTableWidget::item:selected {
+    background-color: #d1d1d1; /* Fondo de la celda seleccionada (celeste muy tenue) */
+    color: black; /* Color del texto de la celda seleccionada */
+}</string>
+    </property>
+    <column>
+     <property name="text">
+      <string>id</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Nombre</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Categoria</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Precio</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Desarrollador</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Fecha de lanzamiento</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Puntuación</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1001</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="newGameAction"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+  </widget>
+  <action name="newGameAction">
+   <property name="text">
+    <string>Nuevo Juego</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
