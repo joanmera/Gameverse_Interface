@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>539</width>
-    <height>624</height>
+    <width>549</width>
+    <height>611</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,8 +20,8 @@
   <widget class="QPushButton" name="cancelButton">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>540</y>
+     <x>300</x>
+     <y>520</y>
      <width>151</width>
      <height>51</height>
     </rect>
@@ -77,9 +77,9 @@ border: 0px solid #00aaff; /* Contorno neon azul */</string>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>420</y>
-     <width>161</width>
+     <x>10</x>
+     <y>390</y>
+     <width>201</width>
      <height>31</height>
     </rect>
    </property>
@@ -132,8 +132,8 @@ border: 2px solid black;</string>
   <widget class="QPushButton" name="saveButton">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>540</y>
+     <x>100</x>
+     <y>520</y>
      <width>161</width>
      <height>51</height>
     </rect>
@@ -153,7 +153,7 @@ border: 0px solid black;</string>
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>350</y>
+     <y>330</y>
      <width>271</width>
      <height>31</height>
     </rect>
@@ -172,7 +172,7 @@ border: 2px solid black;</string>
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>420</y>
+     <y>390</y>
      <width>271</width>
      <height>31</height>
     </rect>
@@ -208,7 +208,7 @@ border: 0px solid #00aaff; /* Contorno neon azul */</string>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>180</x>
      <y>20</y>
      <width>571</width>
      <height>71</height>
@@ -227,7 +227,7 @@ border: 0px</string>
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>350</y>
+     <y>330</y>
      <width>131</width>
      <height>31</height>
     </rect>
@@ -245,7 +245,7 @@ border: 0px solid #00aaff; /* Contorno neon azul */</string>
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>480</y>
+     <y>460</y>
      <width>271</width>
      <height>31</height>
     </rect>
@@ -263,8 +263,8 @@ border: 2px solid black;</string>
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>480</y>
+     <x>50</x>
+     <y>460</y>
      <width>121</width>
      <height>31</height>
     </rect>
