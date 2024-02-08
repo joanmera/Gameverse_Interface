@@ -96,10 +96,3 @@ class PurchaseForm(QWidget):
             check_button.setIconSize(QSize(25, 25))
             check_button.setProperty("row", i)
             self.purchaseTable.setCellWidget(i, 0, check_button)
-
-            details_button = QPushButton("Detalles")
-            details_button.setIcon(QIcon("views/details.png"))
-            details_button.setStyleSheet("background-color: transparent; border: none; color: black;")
-            details_button.setIconSize(QSize(25, 25))
-            details_button.setProperty("row", i)
-            self.purchaseTable.setCellWidget(i, 4, details_button)

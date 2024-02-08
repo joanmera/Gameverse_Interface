@@ -21,9 +21,9 @@ color: rgb(255, 255, 255);</string>
   <widget class="QTableWidget" name="purchaseTable">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>80</x>
      <y>110</y>
-     <width>521</width>
+     <width>441</width>
      <height>181</height>
     </rect>
    </property>
@@ -66,11 +66,6 @@ QTableWidget::item:selected {
    <column>
     <property name="text">
      <string>Categoria</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string/>
     </property>
    </column>
   </widget>
