@@ -51,7 +51,7 @@ class MainWindow(QMainWindow):
         self.juego_window.show()
 
     def abrir_ventana_compras(self):
-        self.compras_window.load_purchases()
+        self.compras_window.load_purchase()
         self.compras_window.show()
 
    

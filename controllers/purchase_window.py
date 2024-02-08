@@ -1,10 +1,8 @@
-from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem,QCheckBox,QPushButton
+from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem
 from PyQt5 import uic
 import pathlib
-from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import QSize
-
 from models.purchase_model import PurchaseModel
+from controllers.purchase_form import PurchaseForm
 
 class PurchaseWindow(QMainWindow):
     def __init__(self) -> None:
@@ -12,34 +10,23 @@ class PurchaseWindow(QMainWindow):
         self._purchase_model = PurchaseModel()
         mod_path = pathlib.Path(__file__).parent.parent
         uic.loadUi(mod_path / "views/compras.ui", self)
-        self.load_purchases()
-
-    def load_purchases(self):
-        purchases = self._purchase_model.get_purchase()
-        self.purchaseTable.setRowCount(len(purchases))
-        for i, purchases in enumerate(purchases):
-            id_orden,nombre_juego,nombre_categoria= purchases
-            self.purchaseTable.setItem(i, 1, QTableWidgetItem(str(id_orden)))
-            self.purchaseTable.setItem(i, 2, QTableWidgetItem(str(nombre_juego)))
-            self.purchaseTable.setItem(i, 3, QTableWidgetItem(str(nombre_categoria)))
-
-            check_button= QCheckBox ()
-            check_button.setIcon(QIcon("views/check.png"))
-            check_button.setStyleSheet("background-color: transparent; border: none; color: black;")
-            check_button.setIconSize(QSize(25,25))
-            #check_button.clicked.connect(self.select_purchase)
-            check_button.setProperty("row",i)
-            self.purchaseTable.setCellWidget(i,0,check_button)
-
-            details_button= QPushButton("Detalles")
-            details_button.setIcon(QIcon("views/details.png"))
-            details_button.setStyleSheet("background-color: transparent; border: none; color: black;")
-            details_button.setIconSize(QSize(25,25))
-            #details_button.clicked.connect()
-            details_button.setProperty("row",i)
-            self.purchaseTable.setCellWidget(i,4,details_button)
+        self._new_purchase = PurchaseForm()
+        self.load_purchase()
+        self.actionNueva_compra.triggered.connect(lambda: self.load_product())
 
 
-    def closeEvent(self, ev) -> None:
-        self._purchase_model.close()
-        return super().closeEvent(ev)
+    def load_purchase(self):
+        purchase_list = self._purchase_model.get_purchase()
+        self.purchaseTable.setRowCount(len(purchase_list))
+        for i, compra in enumerate(purchase_list):
+            id_orden, ciudad,fecha_orden, precio_total, nombre_cliente, nombre_juego, nombre_categoria = compra
+            self.purchaseTable.setItem(i, 0, QTableWidgetItem(str(id_orden)))
+            self.purchaseTable.setItem(i, 1, QTableWidgetItem(str(ciudad)))
+            self.purchaseTable.setItem(i, 2, QTableWidgetItem(str(fecha_orden)))
+            self.purchaseTable.setItem(i, 3, QTableWidgetItem(str(precio_total)))
+            self.purchaseTable.setItem(i, 4, QTableWidgetItem(str(nombre_cliente)))
+            self.purchaseTable.setItem(i, 5, QTableWidgetItem(str(nombre_juego)))
+            self.purchaseTable.setItem(i, 6, QTableWidgetItem(str(nombre_categoria)))
+
+    def load_product(self):
+        self._new_purchase.show()
