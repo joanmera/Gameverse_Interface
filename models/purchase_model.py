@@ -7,7 +7,7 @@ class PurchaseModel:
         self._cur = DB.cursor
 
     def get_products(self):
-        query = " SELECT id_orden, nombre_juego,nombre_categoria \
+        query = " SELECT id_juego, nombre_juego,nombre_categoria \
         FROM compra co, videojuego v, categoria c, juego_categoria jc, juego_compra jco \
         WHERE co.id_orden = jco.id_orden1 AND jco.id_juego2= v.id_juego  \
         AND v.id_juego = jc.id_juego1 AND jc.id_categoria1 = c.id_categoria \
