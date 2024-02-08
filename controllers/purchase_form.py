@@ -14,7 +14,6 @@ class PurchaseForm(QWidget):
         uic.loadUi(mod_path / "views/compras_form.ui", self)
         self.load_purchases()
         
-
         
         # Asigna la función save_purchase a la señal clicked del botón de guardar
         self.saveButton.clicked.connect(self.save_purchase)
@@ -49,8 +48,8 @@ class PurchaseForm(QWidget):
                 # Emitir señal de que la compra ha sido guardada
                 self.purchase_saved.emit()
 
-                # Cerrar la ventana
-                self.close()
+                
+                
             else:
                 # Manejar el caso en que no se seleccionó ningún juego
                 print("No se seleccionó ningún juego.")
@@ -58,7 +57,6 @@ class PurchaseForm(QWidget):
         else:
             # Manejar el caso en que no se seleccionó ninguna fila
             print("No se seleccionó ninguna fila.")
-
 
 
     def get_selected_games(self):
@@ -78,6 +76,7 @@ class PurchaseForm(QWidget):
         # Muestra el precio total en tu etiqueta (si es necesario)
         total_str = "{:.2f}".format(total_price)
         self.label_4.setText(total_str)
+        
 
         return selected_games, total_price  # Retorna la lista de juegos seleccionados y el precio total
 
@@ -103,4 +102,4 @@ class PurchaseForm(QWidget):
             details_button.setStyleSheet("background-color: transparent; border: none; color: black;")
             details_button.setIconSize(QSize(25, 25))
             details_button.setProperty("row", i)
-            self.purchaseTable.setCellWidget(i, 5, details_button)
+            self.purchaseTable.setCellWidget(i, 4, details_button)
