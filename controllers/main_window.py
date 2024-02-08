@@ -49,10 +49,12 @@ class MainWindow(QMainWindow):
     def abrir_ventana_juego(self):
         self.juego_window.load_game()
         self.juego_window.show()
+        self.close()
 
     def abrir_ventana_compras(self):
         self.compras_window.load_purchase()
         self.compras_window.show()
+        self.close()
 
    
 
