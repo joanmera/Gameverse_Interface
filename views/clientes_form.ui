@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>759</width>
-    <height>647</height>
+    <width>564</width>
+    <height>614</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@ border: 0px solid #00aaff; /* Contorno neon azul */</string>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>150</x>
      <y>30</y>
      <width>571</width>
      <height>71</height>
@@ -38,7 +38,7 @@ border: 0px</string>
   <widget class="QLineEdit" name="name_lineEdit">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>220</x>
      <y>120</y>
      <width>271</width>
      <height>31</height>
@@ -57,7 +57,7 @@ border: 2px solid black;</string>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>60</x>
      <y>110</y>
      <width>131</width>
      <height>41</height>
@@ -75,7 +75,7 @@ border: 0px solid #00aaff; /* Contorno neon azul */</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>60</x>
      <y>190</y>
      <width>131</width>
      <height>31</height>
@@ -93,7 +93,7 @@ border: 0px solid #00aaff; /* Contorno neon azul */</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>60</x>
      <y>270</y>
      <width>131</width>
      <height>31</height>
@@ -111,7 +111,7 @@ border: 0px solid #00aaff; /* Contorno neon azul */</string>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>60</x>
      <y>440</y>
      <width>141</width>
      <height>31</height>
@@ -129,7 +129,7 @@ border: 0px solid #00aaff; /* Contorno neon azul */</string>
   <widget class="QLineEdit" name="id_lineEdit">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>220</x>
      <y>200</y>
      <width>271</width>
      <height>31</height>
@@ -148,7 +148,7 @@ border: 2px solid black;</string>
   <widget class="QLineEdit" name="age_lineEdit">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>220</x>
      <y>280</y>
      <width>271</width>
      <height>31</height>
@@ -167,7 +167,7 @@ border: 2px solid black;</string>
   <widget class="QLineEdit" name="number_lineEdit">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>220</x>
      <y>440</y>
      <width>271</width>
      <height>31</height>
@@ -186,7 +186,7 @@ border: 2px solid black;</string>
   <widget class="QPushButton" name="saveButton">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>120</x>
      <y>520</y>
      <width>161</width>
      <height>51</height>
@@ -206,7 +206,7 @@ border: 0px solid black;</string>
   <widget class="QPushButton" name="cancelButton">
    <property name="geometry">
     <rect>
-     <x>400</x>
+     <x>320</x>
      <y>520</y>
      <width>151</width>
      <height>51</height>
@@ -226,7 +226,7 @@ border: 0px solid black;</string>
   <widget class="QLineEdit" name="gender_lineEdit">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>220</x>
      <y>360</y>
      <width>271</width>
      <height>31</height>
@@ -245,7 +245,7 @@ border: 2px solid black;</string>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>60</x>
      <y>360</y>
      <width>131</width>
      <height>31</height>

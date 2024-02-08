@@ -1,7 +1,8 @@
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem,QPushButton,QMessageBox
 from PyQt5 import uic
 import pathlib
-from PyQt5 import QtCore
+from PyQt5.QtGui import QIcon
+from PyQt5.QtCore import QSize
 
 from models.category_model import CategoryModel
 from controllers.category_form import CategoryForm
@@ -26,11 +27,17 @@ class CategoryWindow(QMainWindow):
             self.categoryTable.setItem(i, 1, QTableWidgetItem(str(nombre_categoria)))
 
             edit_button= QPushButton ("Editar")
+            edit_button.setIcon(QIcon("views/edit.png"))
+            edit_button.setStyleSheet("background-color: transparent; border: none; color: black;")
+            edit_button.setIconSize(QSize(25,25))
             edit_button.clicked.connect(self.edit_category)
             edit_button.setProperty("row",i)
             self.categoryTable.setCellWidget(i,2,edit_button)
 
             delete_button = QPushButton("Eliminar")
+            delete_button.setIcon(QIcon("views/delete.png"))
+            delete_button.setStyleSheet("background-color: transparent; border: none; color: black;")
+            delete_button.setIconSize(QSize(25,25))
             delete_button.clicked.connect(self.delete_category)
             delete_button.setProperty("row", i)
             self.categoryTable.setCellWidget(i, 3, delete_button)

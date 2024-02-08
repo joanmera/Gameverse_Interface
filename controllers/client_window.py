@@ -1,11 +1,10 @@
 from psycopg2 import Error
 import pathlib
-from PyQt5.QtWidgets import QWidget
-from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5 import uic   
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox, QPushButton
 from PyQt5 import QtCore
-
+from PyQt5.QtGui import QIcon
+from PyQt5.QtCore import QSize
 
 from models.client_model import ClientModel
 from controllers.client_form import ClientForm
@@ -37,11 +36,17 @@ class ClientWindow(QMainWindow):
 
 
             edit_button = QPushButton ("Editar")
+            edit_button.setIcon(QIcon("views/edit.png"))
+            edit_button.setStyleSheet("background-color: transparent; border: none; color: black;")
+            edit_button.setIconSize(QSize(25,25))
             edit_button.clicked.connect(self.edit_client)
             edit_button.setProperty("row", i)
             self.clientTable.setCellWidget(i, 6, edit_button)
 
             delete_button = QPushButton("Eliminar")
+            delete_button.setIcon(QIcon("views/delete.png"))
+            delete_button.setStyleSheet("background-color: transparent; border: none; color: black;")
+            delete_button.setIconSize(QSize(25,25))
             delete_button.clicked.connect(self.delete_client)
             delete_button.setProperty("row", i)
             self.clientTable.setCellWidget(i, 7, delete_button)

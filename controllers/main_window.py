@@ -17,12 +17,12 @@ class MainWindow(QMainWindow):
         root_path = pathlib.Path(__file__).parent.parent
         uic.loadUi(root_path / "views/MainWindow.ui", self)
         pixmap = QPixmap('logo3.png')
-        pixmap = pixmap.scaledToWidth(231)
-        pixmap = pixmap.scaledToHeight(141)
+        pixmap = pixmap.scaledToWidth(310)
+        pixmap = pixmap.scaledToHeight(210)
 
         label = QLabel(self)
         label.setPixmap(pixmap)
-        label.setGeometry(148, 70, 231, 141)
+        label.setGeometry(90, 20, 471, 251)
 
         
 

@@ -1,7 +1,8 @@
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem,QCheckBox,QPushButton
 from PyQt5 import uic
 import pathlib
-from PyQt5 import QtCore
+from PyQt5.QtGui import QIcon
+from PyQt5.QtCore import QSize
 
 from models.purchase_model import PurchaseModel
 
@@ -23,11 +24,17 @@ class PurchaseWindow(QMainWindow):
             self.purchaseTable.setItem(i, 3, QTableWidgetItem(str(nombre_categoria)))
 
             check_button= QCheckBox ()
+            check_button.setIcon(QIcon("views/check.png"))
+            check_button.setStyleSheet("background-color: transparent; border: none; color: black;")
+            check_button.setIconSize(QSize(25,25))
             #check_button.clicked.connect(self.select_purchase)
             check_button.setProperty("row",i)
             self.purchaseTable.setCellWidget(i,0,check_button)
 
             details_button= QPushButton("Detalles")
+            details_button.setIcon(QIcon("views/details.png"))
+            details_button.setStyleSheet("background-color: transparent; border: none; color: black;")
+            details_button.setIconSize(QSize(25,25))
             #details_button.clicked.connect()
             details_button.setProperty("row",i)
             self.purchaseTable.setCellWidget(i,4,details_button)

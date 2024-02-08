@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>935</width>
-    <height>644</height>
+    <width>1001</width>
+    <height>544</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,21 +15,38 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(53, 53, 79);
-border: 2px solid #00aaff; /* Contorno neon azul */</string>
+border: 1px solid #00aaff; /* Contorno neon azul */</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="gameTable">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>40</x>
       <y>40</y>
-      <width>681</width>
+      <width>921</width>
       <height>411</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(7, 7, 7);
-background-color: rgb(255, 255, 255);</string>
+     <string notr="true">QTableWidget {
+	color: rgb(201, 255, 252);
+    background-color: #d9fffb;; /* Fondo de la tabla (celeste muy tenue) */
+}
+
+QTableWidget QHeaderView:section {
+    background-color: #a9bdff ; /* Fondo del encabezado de la columna (celeste muy tenue) */
+    color: black; /* Color del texto del encabezado de la columna (negro) */
+}
+
+QTableWidget::item {
+    padding: 5px; /* Espaciado interno de las celdas */ 
+	color: black;
+}
+
+QTableWidget::item:selected {
+    background-color: #d1d1d1; /* Fondo de la celda seleccionada (celeste muy tenue) */
+    color: black; /* Color del texto de la celda seleccionada */
+}</string>
     </property>
     <column>
      <property name="text">
@@ -83,8 +100,8 @@ background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>935</width>
-     <height>22</height>
+     <width>1001</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">

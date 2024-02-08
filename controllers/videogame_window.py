@@ -1,9 +1,8 @@
 import pathlib
-from PyQt5.QtWidgets import QWidget
-from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5 import uic   
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox, QPushButton
-
+from PyQt5.QtGui import QIcon
+from PyQt5.QtCore import QSize
 
 from models.videogame_model import VideogameModel
 from controllers.videogame_form import VideogameForm
@@ -35,11 +34,17 @@ class VideogameWindow(QMainWindow):
 
 
             edit_button = QPushButton ("Editar")
+            edit_button.setIcon(QIcon("views/edit.png"))
+            edit_button.setStyleSheet("background-color: transparent; border: none; color: black;")
+            edit_button.setIconSize(QSize(25,25))
             edit_button.clicked.connect(self.edit_game)
             edit_button.setProperty("row", i)
             self.gameTable.setCellWidget(i, 7, edit_button)
 
             delete_button = QPushButton("Eliminar")
+            delete_button.setIcon(QIcon("views/delete.png"))
+            delete_button.setStyleSheet("background-color: transparent; border: none; color: black;")
+            delete_button.setIconSize(QSize(25,25))
             delete_button.clicked.connect(self.delete_game)
             delete_button.setProperty("row", i)
             self.gameTable.setCellWidget(i, 8, delete_button)

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>929</width>
-    <height>629</height>
+    <width>877</width>
+    <height>572</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,22 +15,39 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(53, 53, 79);
-border: 2px solid #00aaff; /* Contorno neon azul */
+border: 1px solid #00aaff; /* Contorno neon azul */
 color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="clientTable">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>90</y>
-      <width>611</width>
-      <height>411</height>
+      <x>30</x>
+      <y>40</y>
+      <width>821</width>
+      <height>451</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(7, 7, 7);
-background-color: rgb(255, 255, 255);</string>
+     <string notr="true">QTableWidget {
+	color: rgb(201, 255, 252);
+    background-color: #d9fffb;; /* Fondo de la tabla (celeste muy tenue) */
+}
+
+QTableWidget QHeaderView:section {
+    background-color: #a9bdff ; /* Fondo del encabezado de la columna (celeste muy tenue) */
+    color: black; /* Color del texto del encabezado de la columna (negro) */
+}
+
+QTableWidget::item {
+    padding: 5px; /* Espaciado interno de las celdas */ 
+	color: black;
+}
+
+QTableWidget::item:selected {
+    background-color: #d1d1d1; /* Fondo de la celda seleccionada (celeste muy tenue) */
+    color: black; /* Color del texto de la celda seleccionada */
+}</string>
     </property>
     <column>
      <property name="text">
@@ -64,12 +81,12 @@ background-color: rgb(255, 255, 255);</string>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string/>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>New Column</string>
+      <string/>
      </property>
     </column>
    </widget>
@@ -79,8 +96,8 @@ background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>929</width>
-     <height>22</height>
+     <width>877</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuCliente">
